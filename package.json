@@ -1,0 +1,74 @@
+{
+    "name": "tetra-api",
+    "version": "0.0.1",
+    "main": "src/app.js",
+    "author": "Tokopedia",
+    "license": "ISC",
+    "description": "Tetra API",
+    "scripts": {
+        "build": "babel src -d dist --source-maps",
+        "serve": "node dist/app.js",
+        "start": "babel-node src/app.js",
+        "start:dev": "nodemon",
+        "test": "jest --runInBand --verbose",
+        "coverage": "jest --coverage --runInBand --verbose",
+        "eslint": "eslint src/**/*.js --ignore-pattern \"node_modules/\""
+    },
+    "babel": {
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ],
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": true
+                    }
+                }
+            ]
+        ]
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "eslintConfig": {
+        "plugins": [
+            "node",
+            "jest"
+        ],
+        "env": {
+            "jest/globals": true,
+            "node": true,
+            "es6": true
+        },
+        "parserOptions": {
+            "sourceType": "module",
+            "ecmaVersion": 2018
+        }
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/node": "^7.5.5",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "babel-cli": "^6.26.0",
+        "eslint": "^6.1.0",
+        "eslint-plugin-jest": "^22.14.1",
+        "eslint-plugin-node": "^9.1.0",
+        "jest": "^24.8.0",
+        "jest-cli": "^24.8.0",
+        "nodemon": "^1.19.1",
+        "prettier": "^1.18.2"
+    },
+    "dependencies": {
+        "@babel/register": "^7.5.5",
+        "babel": "^6.23.0",
+        "express": "^4.17.1",
+        "knex": "^0.19.1",
+        "koa": "^2.7.0",
+        "koa-router": "^7.4.0",
+        "pg": "^7.12.0"
+    }
+}
